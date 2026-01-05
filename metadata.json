@@ -1,0 +1,5 @@
+{
+  "name": "NeuroSim Web",
+  "description": "A browser-based Digital Twin of a Neurofeedback BCI system. It simulates EEG signals, processes Alpha waves (8-12Hz) in real-time using TypeScript DSP, and generates non-aversive audio feedback via the Web Audio API.",
+  "requestFramePermissions": []
+}
