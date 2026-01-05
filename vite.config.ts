@@ -11,8 +11,13 @@ export default defineConfig(({ mode }) => {
       },
       plugins: [react()],
       define: {
+        // Your existing environment variables
         'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
-        'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
+        'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
+        // Add these polyfills to prevent crashes
+        'process.env.NODE_ENV': JSON.stringify(mode),
+        'process.env': '{}', // Fallback for any undefined process.env access
+        'global': 'globalThis', // Modern alternative to 'window'
       },
       resolve: {
         alias: {
